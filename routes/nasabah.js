@@ -20,7 +20,6 @@ router.get('/', function(req, res) {
   }
   nasabah.length != 0 ? res.send(nasabah) : res.send(data.nasabah);
   console.log({message: "nasabah get func triggered"});
-  console.log(req.body)
   res.end();
 });
 
@@ -56,7 +55,7 @@ router.post('/', (req, res)=> {
     fileWrite(JSON.stringify(data));
     res.send({message: "nasabah added sucessfully!"});
   }
-  console.log(nasabah[0])
+  console.log({message: "nasabah post func triggered"});
   res.end();
 });
 
@@ -74,6 +73,7 @@ router.delete('/', function(req, res) {
   } else {
     res.status(201).send({message: 'need an id'});
   }
+  console.log({message: "nasabah delete func triggered"});
   res.end();
 });
 
@@ -107,6 +107,7 @@ router.patch('/', (req, res)=> {
       res.send({message: 'nasabah updated'})
     }
   }
+  console.log({message: "nasabah patch func triggered"});
   res.end();
 });
 
